@@ -1,0 +1,27 @@
+
+    <nz-table #basicTable [nzData]="reservations">
+        <thead>
+            <tr>
+                <th>Table Type</th>
+                <th>Description</th>
+                <th>Reservation Time</th>
+                <th>Reservation Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations">
+                <td>{{reservation.tableType}}</td>
+                <td>{{reservation.description}}</td>
+                <td>{{reservation.dateTime | date : "h:mm a"}}</td>
+                <td>{{reservation.dateTime | date}}</td>
+                <td>
+                    <strong
+                        [ngStyle]="{ 'color' : reservation.reservationStatus === 'APPROVED' ? 
+                        'green' : reservation.reservationStatus === 'DISAPPROVED' ? 'blue' : 'red' }">
+                        {{reservation.reservationStatus}}
+                    </strong>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>

@@ -1,0 +1,56 @@
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 57px;
+    background-color: #F48023;
+    height: auto;
+
+    a.active{
+        background: #141a33;
+    }
+
+    a{
+        font-weight: 300;
+        font-size: 15px;
+        border-radius: 0px;
+        color: white;
+    }
+
+    a.ant-btn{
+        &:hover{
+            color: white;
+            background: #141a33;
+        }
+    }
+
+    img{
+        width: 180px;
+    }
+
+    .img_profile{
+        width: 25px;
+    }
+}
+
+.active-button{
+    border-radius: 0px !important;
+    padding: 2px 5px !important;
+    background: #141a33;
+}
+
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #F48023;
+    padding: 0px;
+}
+
+.admin-button{
+    text-decoration: solid;
+    text-transform: lowercase;
+    word-spacing: 2px;
+    margin: 5px;
+    padding: 5px;
+}

@@ -1,0 +1,46 @@
+<div style="margin-top: 50px;">
+    <div class="parent">
+        <div class="child">
+
+            <div nz-row class="imgDiv">
+                    <h1 style="margin-left: 150px;">Reservation Request </h1>
+            </div>
+
+            <form nz-form [formGroup]="validateForm">
+                <div nz-row>
+                    <div nz-col nzSpan="24" style="margin-top: 20px;">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required">
+                                <nz-select nzShowSearch nzAllowClear placeholder="Select a Table Type"
+                                    formControlName="tableType">
+                                    <nz-option nzLabel="{{table}}" *ngFor="let table of TableType"
+                                        nzValue="{{table}}"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzSpan="24" [nzXs]="24" nzHasFeedback>
+                                <nz-date-picker nzFormat="yyyy-MM-dd HH:mm" placeholder="Select Date and Time"
+                                    [nzShowTime]="{ nzFormat : 'HH:mm'}" formControlName="dateTime"></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col nzSpan="24">
+                        <nz-form-item>
+                            <nz-form-control nzHasFeedback [nzXs]="24" nzErrorTip="This input is required">
+                                <textarea rows="1" nz-input placeholder="Description"
+                                    formControlName="description"></textarea>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+
+                </div>
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'"
+                    (click)="postResevation()">Add</button>
+            </form>
+        </div>
+    </div>
+</div>

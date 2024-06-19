@@ -1,0 +1,33 @@
+
+
+<div style="background-color: #f8f8f8; min-height: 91vh;">
+    <div style="padding-top: 10px;">
+    </div>
+
+    <div style="margin-top: 10px;" class="child" *ngFor="let product of Products">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;"
+                [src]="product.processedImg" alt="profile" />
+            </div>
+            <div nz-col nzSpan="16">
+                <h2 style="cursor: pointer; color: #108ee9;">
+                    {{product.name}}</h2>
+                <hr>
+                <h5>
+                    Price : {{product.price}}
+                    Description : {{product.description}}
+                    Category : {{product.categoryName}}
+                </h5>
+
+                <hr>
+                <div style="float: right;">
+                    <button nzSize="small" class="btn btn-info"
+                     routerLink="/admin/product/{{product.id}}">Update</button>
+                    <button style="margin-left: 10px;" class="btn btn-danger"
+                     (click)="deleteProduct(product.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

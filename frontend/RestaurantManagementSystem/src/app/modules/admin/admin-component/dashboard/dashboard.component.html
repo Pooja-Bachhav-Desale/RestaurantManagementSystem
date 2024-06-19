@@ -1,0 +1,39 @@
+<form nz-form [formGroup]="validateForm" style="margin-top: 20px; text-align: center;" (ngSubmit)="submitForm()">
+    <input nz-input placeholder="Enter keyword to search" nzSize="large" style="width: 20%;"
+        formControlName="categoryName" />
+    <button nz-button nzSize="small" nzType="primary" style="margin-left: 15px;">Search</button>
+</form>
+
+<div style="background-color: #f8f8f8; min-height: 91vh;">
+    <div style="padding-top: 10px;">
+    </div>
+
+    <div style="margin-top: 10px;" class="child" *ngFor="let category of categories">
+
+        <div class="row">
+            <div class="column">
+              <!-- Content for the first column -->
+             
+              <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;"
+                    [src]="category.returnedImg" alt="profile" />
+            </div>
+            <div class="column">
+              <!-- Content for the second column -->
+             
+              <h2 style="cursor: pointer; color: #108ee9;">
+                {{category.categoryName}}</h2>
+            <hr>
+            <h5> Description: <b> {{category.description}}</b></h5>
+            <hr>
+            <div style="float: right;">
+                <button nzSize="small" nz-button nzType="primary"
+                    routerLink="/admin/{{category.categoryId}}/products">View Products</button>
+                <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
+                    routerLink="/admin/{{category.categoryId}}/product">Post Product</button>
+
+            </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
